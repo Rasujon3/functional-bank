@@ -9,8 +9,15 @@ document
     // get current deposit
     const depositTotal = document.getElementById("deposit-total");
     const depositTotalText = depositTotal.innerText;
-    const depositTotalAmount = parseFloat(depositTotalText);
-    depositTotal.innerText = depositAmount + depositTotalAmount;
+    const previousDepositTotal = parseFloat(depositTotalText);
+    depositTotal.innerText = depositAmount + previousDepositTotal;
+
+    // update balance
+    const balanceTotal = document.getElementById("balance-total");
+    const balanceTotalText = balanceTotal.innerText;
+    const previousBalanceTotal = parseFloat(balanceTotalText);
+
+    balanceTotal.innerText = previousBalanceTotal + depositAmount;
 
     // clear input field
     depositInput.value = "";
